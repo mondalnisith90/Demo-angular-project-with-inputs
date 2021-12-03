@@ -1,0 +1,15 @@
+.root_div {
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.main_div {
+  width: 500px;
+  margin-top: 80px;
+}
+
+label {
+  margin-top: 10px;
+}

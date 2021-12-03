@@ -1,0 +1,147 @@
+<!-- <div class="root_div">
+  <form  [formGroup]="signupForm" (ngSubmit)="signupFormSubmit()" >
+
+    <div class="form-group">
+      <label for="exampleInputName">Name*</label>
+      <input type="text" formControlName="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter name">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputAddress">Address</label>
+      <input type="text" formControlName="address" class="form-control" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Gendar*</label>
+
+    <div class="form-check">
+      <input class="form-check-input" formControlName="gender" value="male" type="radio" name="gender" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Male
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" value="female" formControlName="gender" name="gender" id="flexRadioDefault2">
+      <label class="form-check-label" for="flexRadioDefault2">
+        Female
+      </label>
+    </div>
+    </div>
+
+    <div class="form-group" > 
+      <label for="exampleInputEmail1">Course*</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="reactjs" formControlName="course" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          React JS
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="angularjs" formControlName="course" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckChecked">
+          Angular JS
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="nodejs" formControlName="course" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckChecked">
+          Node JS
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <select class="form-select" formControlName="dropdown" aria-label="Default select example">
+        <option value="default">default</option>
+        <option value="one">One</option>
+        <option value="two">Two</option>
+        <option value="three">Three</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address*</label>
+      <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password*</label>
+      <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+<br/><br/>
+  <input type="text" [(ngModel)]="text"  />
+  <h2>{{text}}</h2>
+
+</div> -->
+<!-- <a routerLink="/login">Login</a>
+
+<router-outlet></router-outlet> -->
+
+
+<div class="root_div">
+ <div class="main_div card p-4 shadow">
+  <form [formGroup]="signupForm" (ngSubmit)="signupFormSubmit()" >
+  <div class="form-group">
+    <label for="exampleInputName">Name*</label>
+    <input type="text" formControlName="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter name">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address*</label>
+    <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password*</label>
+    <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <strong class="mt-2">Courses</strong>
+  <ng-container *ngFor="let course of courseArray.controls; let i = index;">
+    <div>
+      <input type="checkbox" [formControl]="cours" (change)="corseCheckboxChange()" id="courseCheckBox{{i}}" />
+      <label class="ms-1">{{coursesList[i]}}</label>
+    </div>
+  </ng-container>
+
+
+
+  <div>
+    <button class="btn btn-primary my-3" (click)="addProjectBtnClick()">Add Project</button>
+  </div>
+
+  <ng-container  formArrayName="projects">
+  <ng-container *ngFor="let project of projectArray.controls; let i = index;" >
+    <div class="bg-light shadow p-4 my-2" [formGroupName]="i">
+      <button class="btn btn-danger btn-sm" (click)="deleteProject(i)" >Delete</button>
+      <div class="form-group">
+        <label for="exampleInputAddress">Project {{i+1}}</label>
+        <input type="text" formControlName="projectName" class="form-control" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="Enter project name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputAddress">Used Technology</label>
+        <input type="text" formControlName="usedTechnologies" class="form-control" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="Technologies you used">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputAddress">Project Description</label>
+        <input type="text" formControlName="description" class="form-control" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="Enter project description">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputAddress">Starting Date</label>
+        <input type="date" formControlName="StartingDate" class="form-control" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="Enter project Starting date">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputAddress">Ending Date</label>
+        <input type="date" formControlName="endingDate" class="form-control" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="Enter project ending date">
+      </div>
+    </div>  
+  </ng-container>
+  </ng-container>
+
+ 
+
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+</form>
+ </div>
+</div>
