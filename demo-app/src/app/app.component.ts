@@ -25,7 +25,7 @@ export class AppComponent {
 
   }
 
-  coursesList: Array<string> = ['C', 'JAva', 'NodeJS', 'AngularJS', 'Android'];
+  coursesList: Array<string> = ['C', 'Java', 'NodeJS', 'AngularJS', 'Android'];
   selectedCoursesList: Array<string> = [];
 
 

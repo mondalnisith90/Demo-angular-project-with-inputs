@@ -100,7 +100,7 @@
   <strong class="mt-2">Courses</strong>
   <ng-container *ngFor="let course of courseArray.controls; let i = index;">
     <div>
-      <input type="checkbox" [formControl]="cours" (change)="corseCheckboxChange()" id="courseCheckBox{{i}}" />
+      <input type="checkbox" [formControl]="course" (change)="corseCheckboxChange()" id="courseCheckBox{{i}}" />
       <label class="ms-1">{{coursesList[i]}}</label>
     </div>
   </ng-container>
